@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "projects": {
+    "continental-region": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/continental-region",
+      "sourceRoot": "apps/continental-region/src",
+      "prefix": "wb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/continental-region",
+            "index": "apps/continental-region/src/index.html",
+            "main": "apps/continental-region/src/main.ts",
+            "polyfills": "apps/continental-region/src/polyfills.ts",
+            "tsConfig": "apps/continental-region/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/continental-region/src/favicon.ico",
+              "apps/continental-region/src/assets"
+            ],
+            "styles": ["apps/continental-region/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/continental-region/src/environments/environment.ts",
+                  "with": "apps/continental-region/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "continental-region:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "continental-region:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "continental-region:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/continental-region/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/continental-region/**"]
+          }
+        }
+      }
+    },
+    "continental-region-e2e": {
+      "root": "apps/continental-region-e2e",
+      "sourceRoot": "apps/continental-region-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/continental-region-e2e/cypress.json",
+            "tsConfig": "apps/continental-region-e2e/tsconfig.e2e.json",
+            "devServerTarget": "continental-region:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "continental-region:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/continental-region-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/continental-region-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "none",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "none"
+    }
+  },
+  "defaultProject": "continental-region"
+}
