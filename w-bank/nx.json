@@ -27,6 +27,9 @@
     },
     "shared-domain": {
       "tags": []
+    },
+    "shared-ui": {
+      "tags": []
     }
   }
 }
