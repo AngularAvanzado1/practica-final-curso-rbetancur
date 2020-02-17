@@ -24,6 +24,9 @@
     "country-e2e": {
       "tags": [],
       "implicitDependencies": ["country"]
+    },
+    "shared-domain": {
+      "tags": []
     }
   }
 }
