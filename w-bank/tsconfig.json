@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@w-bank/domain": ["libs/shared/domain/src/index.ts"],
-      "@w-bank/shared/ui": ["libs/shared/ui/src/index.ts"]
+      "@w-bank/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
