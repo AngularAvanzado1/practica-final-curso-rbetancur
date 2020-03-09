@@ -312,6 +312,22 @@
           "styleext": "scss"
         }
       }
+    },
+    "shared-data": {
+      "projectType": "library",
+      "root": "libs/shared/data",
+      "sourceRoot": "libs/shared/data/src",
+      "prefix": "wb-data",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/shared/data/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/data/**"]
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

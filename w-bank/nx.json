@@ -30,6 +30,9 @@
     },
     "shared-ui": {
       "tags": []
+    },
+    "shared-data": {
+      "tags": []
     }
   }
 }
