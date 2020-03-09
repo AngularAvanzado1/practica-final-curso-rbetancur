@@ -1,13 +1,33 @@
-import { getGreeting } from '../support/app.po';
+import {
+  visitHome,
+  getTitle,
+  getSubTitle,
+  getTable
+} from '../support/app.po';
 
-describe('continental-region', () => {
-  beforeEach(() => cy.visit('/'));
+describe('GIVEN: The continental-region web app', () => {
+  beforeEach(() => visitHome());
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  context('WHEN: user visit home page', () => {
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to continental-region!');
+    it('THEN: should display a section title', () => {
+      getTitle().contains('Continental regions');
+    });
+
+    it('THEN: should display a table of regions', () => {
+      getTable().contains('East Asia & Pacific');
+      getTable().contains('East Asia & Pacific').click();
+
+      getSubTitle().contains('East Asia & Pacific');
+      getSubTitle().contains('COUNTRIES');
+      getTable().contains('Australia');
+      getTable().contains('Australia').click();
+
+      getTitle().contains('Country Information');
+      getSubTitle().contains('Australia');
+
+    });
+
   });
+
 });
