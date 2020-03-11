@@ -18,13 +18,6 @@
       "tags": [],
       "implicitDependencies": ["continental-region"]
     },
-    "country": {
-      "tags": []
-    },
-    "country-e2e": {
-      "tags": [],
-      "implicitDependencies": ["country"]
-    },
     "shared-domain": {
       "tags": []
     },
