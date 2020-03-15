@@ -1,0 +1,229 @@
+<h1>
+  {{ 'country.sectionTitle' | translate }}
+</h1>
+<div
+     class="row">
+  <div
+       class="col">
+    <div
+         class="row">
+      <div
+           class="col-sm-2">
+        <img
+             src="{{ this.flag }}" />
+      </div>
+      <div
+           class="col-sm-10">
+        <h4>
+          {{ country.name | titlecase }}
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div
+       class="col-sm-4 text-right">
+    <button type="button"
+            id="viewRegionBtn"
+            class="btn btn-link"
+            (click)="viewRegion(this.country.region)">
+      {{ 'country.backRegion' | translate }}
+    </button>
+  </div>
+</div>
+<hr />
+
+<div
+     class="container">
+  <div
+       class="row">
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="countryId"
+               class="col-sm-5 col-form-label font-weight-bold">
+          {{ 'general.id' | translate }}
+        </label>
+        <div
+             class="col-sm-5">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="countryId"
+                 value="{{ country.id }}" />
+        </div>
+      </div>
+    </div>
+
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="countryISO"
+               class="col-sm-5 col-form-label font-weight-bold">
+          {{ 'general.iso' | translate }}
+        </label>
+        <div
+             class="col-sm-5">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="countryISO"
+                 value="{{ country.iso2Code }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+       class="row">
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="countryName"
+               class="col-sm-5 col-form-label font-weight-bold">
+          {{ 'country.name' | translate }}
+        </label>
+        <div
+             class="col-sm-7">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="countryName"
+                 value="{{ this.country.name | titlecase }}" />
+        </div>
+      </div>
+    </div>
+
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="capitalCity"
+               class="col-sm-5 col-form-label font-weight-bold">
+          {{ 'country.capitalCity' | translate }}
+        </label>
+        <div
+             class="col-sm-7">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="capitalCity"
+                 value="{{ this.country.capitalCity | titlecase }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+       class="row">
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="longitude"
+               class="col-sm-5 col-form-label font-weight-bold">
+          {{ 'country.longitude' | translate }}
+        </label>
+        <div
+             class="col-sm-5">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="longitude"
+                 value="{{ this.country.longitude }}" />
+        </div>
+      </div>
+    </div>
+
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="latitude"
+               class="col-sm-5 col-form-label font-weight-bold">
+          {{ 'country.latitude' | translate }}
+        </label>
+        <div
+             class="col-sm-5">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="latitude"
+                 value="{{ this.country.latitude }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div
+       class="row">
+    <div
+         class="col">
+      <div
+           class="row">
+        <label
+               class="col-sm-6 col-form-label font-weight-bold">
+          {{ 'country.adminRegion' | translate }}
+        </label>
+        <div
+             class="col-sm-5">
+          <button type="button"
+                  id="regionName"
+                  class="btn btn-link"
+                  style="position: relative; padding-left: 0;"
+                  (click)="viewRegion(this.country.region)">
+            {{ this.country.region.value | titlecase }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+       class="row">
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="incomeLevel"
+               class="col-sm-6 col-form-label font-weight-bold">
+          {{ 'country.incomeLevel' | translate }}
+        </label>
+        <div
+             class="col-sm-6">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="incomeLevel"
+                 value="{{ this.country.incomeLevel.value }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+       class="row">
+    <div
+         class="col">
+      <div
+           class="row">
+        <label for="lendingType"
+               class="col-sm-6 col-form-label font-weight-bold">
+          {{ 'country.lendingType' | translate }}
+        </label>
+        <div
+             class="col-sm-6">
+          <input type="text"
+                 readonly
+                 class="form-control-plaintext"
+                 id="lendingType"
+                 value="{{ this.country.lendingType.value }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

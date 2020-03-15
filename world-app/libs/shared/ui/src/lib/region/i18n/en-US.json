@@ -1,0 +1,26 @@
+{
+  "general": {
+    "backRegions": "Return to regions",
+    "id": "Identifier",
+    "iso": "ISO Code",
+    "name": "Region",
+    "noRegionsFound": "No results were found for the region with code {{0}}"
+  },
+  "region": {
+    "title": "Continental regions",
+    "sectionTitle": "Basic information of the region",
+    "countries": "Countries",
+    "code": "Code"
+  },
+  "country": {
+    "sectionTitle": "Country Information",
+    "backRegion": "Return to region",
+    "name": "Name",
+    "capitalCity": "Capital City",
+    "longitude": "Longitude",
+    "latitude": "Latitude",
+    "adminRegion": "Administrative region",
+    "incomeLevel": "Income Level",
+    "lendingType": "Lending Type"
+  }
+}

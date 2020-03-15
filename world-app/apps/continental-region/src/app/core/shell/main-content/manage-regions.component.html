@@ -1,0 +1,60 @@
+<h1>
+  {{ 'region.title' | translate }}
+</h1>
+
+<hr>
+<br>
+<div
+     class="table-responsive-sm">
+
+  <table
+         class="table table-sm table-striped">
+    <caption>
+    </caption>
+    <thead
+           class="thead-dark text-center">
+      <tr>
+        <th id='regionId'
+            scope="row">
+          {{ 'general.id' | translate | uppercase }}
+        </th>
+        <th id='regioncode'
+            scope="row">
+          {{ 'region.code' | translate | uppercase }}
+        </th>
+        <th id='regionISO'
+            scope="row">
+          {{ 'general.iso' | translate | uppercase }}
+        </th>
+        <th id='regionName'
+            scope="row">
+          {{ 'general.name' | translate | uppercase }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol
+          *ngFor="let region of regions; let i = index">
+        <td
+            class="text-center">
+          {{ region.id}}
+        </td>
+        <td
+            class="text-center">
+          {{ region.code}}
+        </td>
+        <td
+            class="text-center">
+          {{ region.iso2code}}
+        </td>
+        <td>
+          <button type="button"
+                  class="btn btn-link"
+                  (click)="viewRegion(region)">
+            {{ region.name}}
+          </button>
+        </td>
+
+    </tbody>
+  </table>
+</div>
