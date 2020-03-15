@@ -8,6 +8,7 @@
     "start:continental-region": "ng serve continental-region --port=4201 -o",
     "build:continental-region": "ng build continental-region --prod",
     "test:continental-region": "ng test continental-region --watch --verbose",
+    "test:shared-data": "ng test shared-data --watch --verbose",
     "lint": "nx workspace-lint && ng lint",
     "e2e:continental-region": "sudo ng e2e continental-region-e2e --watch",
     "affected:apps": "nx affected:apps",

@@ -19,6 +19,10 @@ export class ManageRegionsComponent extends Common implements OnInit {
   }
 
   ngOnInit(): void {
+    this.obtainContientalRegions();
+  }
+
+  private obtainContientalRegions(){
     this.worldBankService.obtainContientalRegions()
     .subscribe(response =>{
 
